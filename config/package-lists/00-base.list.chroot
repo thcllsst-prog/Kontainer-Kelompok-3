@@ -1,0 +1,19 @@
+# Dasar sistem (karena --apt-recommends false, hal penting ditulis eksplisit)
+sudo
+# live-config hanya membuat pengguna live (dev) jika paket user-setup terpasang.
+# Paket ini cuma "Recommends", jadi harus ditulis eksplisit (--apt-recommends false).
+user-setup
+libpam-systemd
+dbus-user-session
+locales
+tzdata
+ca-certificates
+network-manager
+network-manager-gnome
+openssh-client
+bash-completion
+curl
+wget
+less
+xdg-user-dirs
+zenity

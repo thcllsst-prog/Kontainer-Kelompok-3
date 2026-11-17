@@ -1,0 +1,11 @@
+#!/bin/sh
+# Aktifkan layanan container dan buang paket yang tidak diperlukan
+set -e
+
+systemctl enable containerd docker 2>/dev/null || true
+
+# Paket yang tidak relevan untuk target pengguna (lihat docs/PAKET.md)
+apt-get purge -y --auto-remove \
+	xterm reportbug popularity-contest tasksel tasksel-data installation-report 2>/dev/null || true
+
+apt-get clean

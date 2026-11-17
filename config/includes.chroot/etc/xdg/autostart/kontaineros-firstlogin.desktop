@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=KontainerOS First Login
+Comment=Menyiapkan workspace container saat pertama kali login
+Exec=/usr/local/bin/kontaineros-firstlogin.sh
+Icon=kontaineros-logo
+Terminal=false
+X-GNOME-Autostart-enabled=true

@@ -1,0 +1,60 @@
+#!/bin/sh
+# Branding KontainerOS: nama distro, wallpaper, logo, banner, konfigurasi XFCE default
+set -e
+
+# --- Nama distro (ID tetap "debian" agar kompatibel dengan tooling) ---
+OSR=/usr/lib/os-release
+sed -i \
+	-e 's/^NAME=.*/NAME="KontainerOS"/' \
+	-e 's/^PRETTY_NAME=.*/PRETTY_NAME="KontainerOS 1.0 (berbasis Debian 12 Bookworm)"/' \
+	"$OSR"
+grep -q '^LOGO=' "$OSR" || echo 'LOGO=kontaineros-logo' >> "$OSR"
+
+echo 'KontainerOS 1.0 \n \l' > /etc/issue
+echo 'KontainerOS 1.0' > /etc/issue.net
+cat > /etc/motd <<'EOF'
+
+  KontainerOS 1.0 - distro pengembang container (docker, podman, buildah, skopeo)
+
+EOF
+echo kontaineros > /etc/hostname
+
+# --- Wallpaper: render SVG ke PNG (XFCE/LightDM lebih aman memakai PNG) ---
+BGDIR=/usr/share/backgrounds/kontaineros
+IMG="$BGDIR/wallpaper.svg"
+if command -v rsvg-convert >/dev/null 2>&1; then
+	rsvg-convert -w 1920 -h 1080 "$BGDIR/wallpaper.svg" -o "$BGDIR/wallpaper.png"
+	IMG="$BGDIR/wallpaper.png"
+fi
+
+# Logo PNG untuk aplikasi yang tidak mendukung SVG
+if command -v rsvg-convert >/dev/null 2>&1; then
+	mkdir -p /usr/share/pixmaps
+	rsvg-convert -w 128 -h 128 /usr/share/icons/hicolor/scalable/apps/kontaineros-logo.svg \
+		-o /usr/share/pixmaps/kontaineros-logo.png
+fi
+
+# --- Konfigurasi XFCE default untuk pengguna baru (/etc/skel) ---
+XML=/etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
+mkdir -p "$(dirname "$XML")"
+{
+	echo '<?xml version="1.0" encoding="UTF-8"?>'
+	echo '<channel name="xfce4-desktop" version="1.0">'
+	echo '  <property name="backdrop" type="empty">'
+	echo '    <property name="screen0" type="empty">'
+	# Nama monitor di VirtualBox (VMSVGA) = monitorVirtual1 (tanpa strip); sisanya untuk perangkat keras nyata
+	for m in monitorVirtual1 monitorVirtual2 monitorVirtual-1 monitorVGA-1 monitorHDMI-1 monitorHDMI-A-1 monitorLVDS-1 monitoreDP-1 monitorDP-1 monitor0 monitor1; do
+		echo "      <property name=\"$m\" type=\"empty\">"
+		for w in 0 1 2 3; do
+			echo "        <property name=\"workspace$w\" type=\"empty\">"
+			echo '          <property name="color-style" type="int" value="0"/>'
+			echo '          <property name="image-style" type="int" value="5"/>'
+			echo "          <property name=\"last-image\" type=\"string\" value=\"$IMG\"/>"
+			echo '        </property>'
+		done
+		echo '      </property>'
+	done
+	echo '    </property>'
+	echo '  </property>'
+	echo '</channel>'
+} > "$XML"

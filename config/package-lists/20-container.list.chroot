@@ -1,0 +1,30 @@
+# Runtime dan tooling container
+docker.io
+# Docker butuh apparmor_parser jika AppArmor aktif di kernel (paket ini hanya "Recommends")
+apparmor
+pigz
+xz-utils
+docker-compose
+containerd
+runc
+crun
+podman
+buildah
+skopeo
+fuse-overlayfs
+slirp4netns
+uidmap
+cgroup-tools
+iproute2
+iptables
+nftables
+bridge-utils
+# Alat developer
+git
+jq
+make
+vim
+tmux
+htop
+yamllint
+shellcheck

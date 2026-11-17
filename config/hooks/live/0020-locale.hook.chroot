@@ -1,0 +1,10 @@
+#!/bin/sh
+# Bahasa Indonesia + zona waktu Asia/Makassar (WITA) sebagai bawaan
+set -e
+
+sed -i -e 's/^# *\(id_ID.UTF-8\)/\1/' -e 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen
+locale-gen
+echo 'LANG=id_ID.UTF-8' > /etc/default/locale
+
+echo 'Asia/Makassar' > /etc/timezone
+ln -sf /usr/share/zoneinfo/Asia/Makassar /etc/localtime

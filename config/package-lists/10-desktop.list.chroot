@@ -1,0 +1,20 @@
+# Desktop ringan: XFCE + LightDM
+xorg
+lightdm
+lightdm-gtk-greeter
+xfce4
+xfce4-terminal
+xfce4-taskmanager
+mousepad
+thunar-archive-plugin
+gvfs
+gvfs-backends
+policykit-1
+policykit-1-gnome
+dbus-x11
+adwaita-icon-theme
+fonts-dejavu
+fonts-noto-core
+librsvg2-bin
+librsvg2-common
+firefox-esr
