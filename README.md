@@ -10,7 +10,7 @@ Desktop XFCE, bahasa Indonesia, zona waktu Asia/Makassar, dan perangkat containe
 - Anggota dan pembagian kerja: [docs/KONTRIBUSI.md](docs/KONTRIBUSI.md)
 - Repositori: https://github.com/thcllsst-prog/Kontainer-Kelompok-3
 - ISO hasil build (unduh): **ISI_TAUTAN_DRIVE_DI_SINI**
-- SHA256 ISO: **ISI_HASH_DI_SINI** (hasil `sha256sum kontaineros-1.0-amd64.iso`)
+- SHA256 ISO: `a9284b9c89ff1b5ded09ae3884ce5961dd78d20c588b91b3d634e0d1da04c364`
 
 ## Struktur
 
