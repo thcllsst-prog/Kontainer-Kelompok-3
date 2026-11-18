@@ -14,7 +14,10 @@
 
 | Tanggal | Anggota | Kegiatan | Bukti (commit / berkas) |
 |---|---|---|---|
-| ISI | ISI | ISI | ISI |
+| 13-14 Nov 2026 | Nurkayla Safitri | Menyiapkan konfigurasi live-build (daftar paket, hook branding, locale, skrip first-login) dan membangun ISO pertama di container Debian 12 | 'auto/', 'config/', 'build.sh' |
+| 14-15 Nov 2026 | Nurkayla Safitri | Menguji ISO v2 di VirtualBox: boot live, instal ke disk, boot dari disk; menemukan bug paket 'user-setup' dan 'apparmor' | 'docs/PAKET.md' (bagian dampak '--apt-recommends false') |
+| 16 Nov 2026 | Nurkayla Safitri | Membangun ISO v3 dengan perbaikan paket, wallpaper, dan skrip 'kontaineros-collect-data.sh' | 'config/package-lists/', 'config/includes.chroot/usr/local/bin/' |
+| 18 Nov 2026 | Nurkayla Safitri | Menguji ISO v3 (live, Docker, Podman), membuat repo Github, dan mengunggah konfigurasi Tahap 1 | repositori ini |
 
 ## Catatan kendala dan pembelajaran Tahap 1
 
