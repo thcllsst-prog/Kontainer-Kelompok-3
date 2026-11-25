@@ -1,4 +1,4 @@
-# Log Kontribusi - Kelompok 5 (Distro Pengembang Container)
+# Log Kontribusi - Kelompok 3 (Distro Pengembang Container)
 
 > Isi tabel ini dengan data anggota yang sebenarnya. Samakan dengan riwayat commit Git (`git log --author`).
 
