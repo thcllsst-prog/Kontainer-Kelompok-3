@@ -6,7 +6,7 @@
 
 | Nama | NIM | Akun Git | Peran utama |
 |---|---|---|---|
-| ISI_NAMA_1 | ISI_NIM | ISI_USERNAME_GITHUB | Tahap 1: konfigurasi live-build dan build ISO |
+| Nurkayla Safitri | 251011005 | thcllsst-prog | Tahap 1: konfigurasi live-build dan build ISO |
 | ISI_NAMA_2 | ISI_NIM | ISI_USERNAME_GITHUB | Tahap 2 Bagian A: Buildroot dasar |
 | ISI_NAMA_3 | ISI_NIM | ISI_USERNAME_GITHUB | Tahap 2 Bagian B: modifikasi kernel (B3) |
 
