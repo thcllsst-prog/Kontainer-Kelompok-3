@@ -6,7 +6,7 @@ Desktop XFCE, bahasa Indonesia, zona waktu Asia/Makassar, dan perangkat containe
 
 ## Informasi kelompok
 
-- Kelompok 5, topik: distro pengembang container
+- Kelompok 3, topik (5): distro pengembang container
 - Anggota dan pembagian kerja: [docs/KONTRIBUSI.md](docs/KONTRIBUSI.md)
 - Repositori: https://github.com/thcllsst-prog/Kontainer-Kelompok-3
 - ISO hasil build (unduh): https://drive.google.com/file/d/16uGhH3T4xNNqk8m5WDhb3nEVax36V7KU/view?usp=sharing
